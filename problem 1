@@ -1,0 +1,67 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int main()
+{
+	//declarations
+	string package;
+	int hours;
+	float bill;
+	
+		
+	
+	cout<<"These are the packages available."<<endl;
+	cout<<"Package A: P995/mo, 10 hours of access. Additional hours are P20/hr."<<endl;
+	cout<<"Package B: P1495/mo, 20 hours of access. Additional hours are P10/hr."<<endl;
+	cout<<"Package C: P1995/mo, unlimited hours of access."<<"\n"<<endl;
+	cout<<"which package was purchased?: [A] [B] or [C]: ";
+	cin>> package;
+	
+	
+			
+	if ((package=="A")||(package=="a")||(package=="B")||(package=="b")||(package=="C")||(package=="c"))		
+	{
+	cout<<"How many hours were used?: ";
+	cin>> hours;
+	
+	//package A
+	if ((package == "A")||(package=="a"))
+	{		
+	if (hours > 10) 
+	{
+	bill = 995 + (hours - 10) * 20;
+	} 
+	else 
+	{
+	bill = 995;
+	}
+	}
+	//package B
+	else if ((package == "B")||(package=="b"))
+	{
+	if (hours>20)
+	{
+	bill= 1495 + (hours-20)*10;
+	}
+	else
+	{
+	bill= 1495;
+	}
+	}
+	//package C
+	
+	else if ((package == "C")||(package=="c"))
+ 	{
+	bill = 1995;
+	}
+ 	} 
+ 	
+	else 
+ 	{
+ 	cout << "Invalid package!";
+	}
+	cout << "Your bill is: P " << bill;
+
+return 0;
+}
