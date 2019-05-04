@@ -1,0 +1,47 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	double gallon;
+	float cc=1.10; //consumption charge
+	float dc=35; //demand charge
+	double ap; //amount paid
+	float tc; //total charge
+	double lc; //late charge
+	
+	cout<<"how many gallons of water were used? ";
+	cin>>gallon;
+	
+	if (gallon<0)
+	{
+		cout<<"Invalid number of gallons";
+	}
+			 
+		tc = dc + (cc * gallon);
+		lc = (tc-ap) + 20; 
+		cout<<"How much did you pay?: ";
+		cin>>ap;
+		
+		if (ap<tc)
+			{
+				cout <<"Your water bill amounts to P" << lc << ", (includes late charge fee) pay exact amount";
+					cin >> ap;
+					
+		if (ap < lc)
+	
+			{	
+			cout << "INVALID PAYMENT PLEASE PAY EXACT AMOUNT" << endl; 
+			}	
+		else
+			{	
+			cout << "Thank you for paying, you have a change of P" << ap - lc << "." << endl; 
+			}
+			}
+		else
+			{
+			cout << "Thank you for paying! Your total water bill amounts to P" << tc << " with a change of P" << ap - tc << "." << endl; 
+			}
+return 0;
+}
